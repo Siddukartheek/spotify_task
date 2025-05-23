@@ -21,6 +21,6 @@ export async function GET(req) {
 
     const data = await response.json();
 
-    const redirectUrl = `http://127.0.0.1:3000/?access_token=${data.access_token}`;
+    const redirectUrl = `${process.env.NEXT_PUBLIC_API}/?access_token=${data.access_token}`;
     return Response.redirect(redirectUrl, 302);
 }
